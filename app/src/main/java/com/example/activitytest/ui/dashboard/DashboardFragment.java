@@ -1,5 +1,6 @@
 package com.example.activitytest.ui.dashboard;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.activitytest.R;
 import com.example.activitytest.databinding.FragmentDashboardBinding;
+import com.example.activitytest.ui.login.LoginActivity;
 
 public class DashboardFragment extends Fragment {
 
@@ -35,6 +37,11 @@ public class DashboardFragment extends Fragment {
                 textView.setText(s);
             }
         });
+
+        Intent myIntent = new Intent(this.getActivity(), LoginActivity.class);
+        myIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(myIntent);
+
         return root;
     }
 
